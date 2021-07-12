@@ -1,0 +1,42 @@
+repos:
+  - repo: git://github.com/sirosen/check-jsonschema
+    rev: 0.3.1
+    hooks:
+      - id: check-github-workflows
+      - id: check-github-actions
+
+  - repo: https://github.com/syntaqx/git-hooks
+    rev: v0.0.17
+    hooks:
+      - id: forbid-binary
+      - id: go-mod-tidy
+      - id: shellcheck
+
+  - repo: git://github.com/pre-commit/pre-commit-hooks
+    rev: v4.0.1
+    hooks:
+      - id: check-added-large-files
+        exclude: data
+      - id: check-merge-conflict
+      - id: detect-private-key
+      # - id: end-of-file-fixer
+      - id: forbid-new-submodules
+      - id: trailing-whitespace
+      - id: check-yaml
+        exclude: config|templates-exports
+      - id: check-json
+        files: ^config\/.*\.json
+
+  - repo: https://github.com/jstewmon/check-swagger
+    rev: v0.1.4
+    hooks:
+      - id: check-swagger
+
+  - repo: https://github.com/dnephin/pre-commit-golang
+    rev: v0.4.0
+    hooks:
+      - id: go-fmt
+      - id: go-vet
+      - id: go-lint
+      - id: no-go-testing
+      - id: golangci-lint

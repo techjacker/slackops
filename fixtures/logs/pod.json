@@ -1,0 +1,157 @@
+{
+  "reconciler group": "",
+  "reconciler kind": "Pod",
+  "name": "nginx-ingress-controller-674f7d767b-b7cq6",
+  "namespace": "nginx",
+  "pod": "nginx/nginx-ing
+ress-controller-674f7d767b-b7cq6", "podfull": {"kind":"Pod","apiVersion":"v1","metadata":{"name":"nginx-ingress-controller-674f7d767b-b7cq6","generateName":"nginx-ingress-controller-674f7d767b-","namespace":"nginx","selfLink":"/api/v1/namespaces/nginx/pods/ngin
+x-ingress-controller-674f7d767b-b7cq6","uid":"1ec190d5-1c6c-4e4d-9109-d180e1040e9a","resourceVersion":"3783488","creationTimestamp":"2021-07-01T09: 57: 54Z","labels":{"app":"nginx-ingress-controller","chart":"nginx-ingress-controller-5.6.14","component":"controll
+er","heritage":"Helm","pod-template-hash":"674f7d767b","release":"nginx-ingress-controller"},"annotations":{"cni.projectcalico.org/podIP":"10.1.208.123/32","cni.projectcalico.org/podIPs":"10.1.208.123/32"},"ownerReferences":[{"apiVersion":"apps/v1","kind":"Repl
+icaSet","name":"nginx-ingress-controller-674f7d767b","uid":"14f967a5-2a27-4a4a-85bd-3ab241ac7aeb","controller":true,"blockOwnerDeletion":true}],"managedFields":[{"manager":"calico","operation":"Update","apiVersion":"v1","time":"2021-07-01T09: 57: 54Z","fieldsType
+":"FieldsV1","fieldsV1":{"f:metadata":{"f:annotations":{".":{},"f:cni.projectcalico.org/podIP":{},"f:cni.projectcalico.org/podIPs":{}}}}},{"manager":"kube-controller-manager","operation":"Update","apiVersion":"v1","time":"2021-07-01T09: 57: 54Z","fieldsType":"Fie
+ldsV1","fieldsV1":{"f:metadata":{"f:generateName":{},"f:labels":{".":{},"f:app":{},"f:chart":{},"f:component":{},"f:heritage":{},"f:pod-template-hash":{},"f:release":{}},"f:ownerReferences":{".":{},"k: {\"uid\":\"14f967a5-2a27-4a4a-85bd-3ab241ac7aeb\"}": {
+      ".": {},
+      "f:apiVersion": {},
+      "f:blockOwnerDeletion": {},
+      "f:controller": {},
+      "f:kind": {},
+      "f:name": {},
+      "f:uid": {}
+    }
+  }
+},
+"f:spec": {
+  "f:containers": {
+    "k:{\"name\":\"nginx-ingress-controller-controller\"}": {
+      ".": {},
+      "f:args": {},
+      "f:env": {
+        ".": {},
+        "k:{\"name\":\"POD_NAME\"}": {
+          ".": {},
+          "f:name": {},
+          "f:valueFrom": {
+            ".": {},
+            "f:fieldRef": {
+              ".": {},
+              "f:apiVersion": {},
+              "f:fieldPath": {}
+            }
+          }
+        },
+        "k:{\"name\":\"POD_NAMESPACE\"}": {
+          ".": {},
+          "f:name": {},
+          "f:valueFrom": {
+            ".": {},
+            "f:fieldRef": {
+              ".": {},
+              "f:apiVersion": {},
+              "f:fieldPath": {}
+            }
+          }
+        }
+      },
+      "f:image": {},
+      "f:imagePullPolicy": {},"f:li
+venessProbe":{".":{},"f:failureThreshold":{},"f:httpGet":{".":{},"f:path":{},"f:port":{},"f:scheme":{}},"f:initialDelaySeconds":{},"f:periodSeconds":{},"f:successThreshold":{},"f:timeoutSeconds":{}},"f:name":{},"f:ports":{".":{},"k: {\"containerPort\":80,\"proto
+col\":\"TCP\"}": {
+          ".": {},
+          "f:containerPort": {},
+          "f:name": {},
+          "f:protocol": {}
+        },
+        "k:{\"containerPort\":443,\"protocol\":\"TCP\"}": {
+          ".": {},
+          "f:containerPort": {},
+          "f:name": {},
+          "f:protocol": {}
+        }
+      },
+      "f:readinessProbe": {
+        ".": {},
+        "f:failureThreshold": {},
+        "f:httpGet": {
+          ".": {},
+          "f:path": {},
+          "f:port": {},
+          "f:scheme": {}
+        },
+        "f:initialDelaySeconds": {},
+        "f:periodSeconds": {},
+        "f:successThreshold": {},
+        "f:timeoutSeconds": {}
+      },
+      "f:resources": {},
+      "f:securityContext": {
+        ".": {},
+        "f:capabilities": {
+          ".": {},
+          "f:add": {},
+          "f:drop": {}
+        },
+        "f:runAsUser": {}
+      },"f:terminationMessagePa
+th":{},"f:terminationMessagePolicy":{}}},"f:dnsPolicy":{},"f:enableServiceLinks":{},"f:restartPolicy":{},"f:schedulerName":{},"f:securityContext":{},"f:serviceAccount":{},"f:serviceAccountName":{},"f:terminationGracePeriodSeconds":{}}}},{"manager":"kubelet","op
+eration":"Update","apiVersion":"v1","time":"2021-07-11T13: 08: 21Z","fieldsType":"FieldsV1","fieldsV1":{"f:status":{"f:conditions":{"k: {\"type\":\"ContainersReady\"}": {
+          ".": {},
+          "f:lastProbeTime": {},
+          "f:lastTransitionTime": {},
+          "f:status": {},
+          "f:type": {}
+        },"k:{\"type\":\
+"Initialized\"}": {
+          ".": {},
+          "f:lastProbeTime": {},
+          "f:lastTransitionTime": {},
+          "f:status": {},
+          "f:type": {}
+        },
+        "k:{\"type\":\"Ready\"}": {
+          ".": {},
+          "f:lastProbeTime": {},
+          "f:lastTransitionTime": {},
+          "f:status": {},
+          "f:type": {}
+        }
+      },
+      "f:containerStatuses": {},
+      "f:hostIP": {},
+      "f:phase": {},
+      "f:podIP": {},
+      "f:podIPs": {
+        ".": {},
+        "k: {\"ip\":\"10.1.208.123\"}": {
+          ".": {},
+          "f:ip": {}
+        }
+      },
+      "f:startTime": {}
+    }
+  }
+}
+]
+},
+"spec": {
+"volumes": [
+{
+  "name": "nginx-ingress-controller-token-6vxqg",
+  "secret": {
+    "secretName": "nginx-ingress-controller-token-6vxqg",
+    "defaultMode": 420
+  }
+}
+],"container
+s":[{"name":"nginx-ingress-controller-controller","image":"docker.io/bitnami/nginx-ingress-controller: 0.40.2-debian-10-r7","args":["/nginx-ingress-controller","--default-backend-service=nginx/nginx-ingress-controller-default-backend","--election-id=ingress-cont
+roller-leader","--ingress-class=nginx","--configmap=nginx/nginx-ingress-controller"],"ports":[{"name":"http","containerPort":80,"protocol":"TCP"},{"name":"https","containerPort":443,"protocol":"TCP"}],"env":[{"name":"POD_NAME","valueFrom":{"fieldRef":{"apiVersi
+on":"v1","fieldPath":"metadata.name"}}},{"name":"POD_NAMESPACE","valueFrom":{"fieldRef":{"apiVersion":"v1","fieldPath":"metadata.namespace"}}}],"resources":{},"volumeMounts":[{"name":"nginx-ingress-controller-token-6vxqg","readOnly":true,"mountPath":"/var/run/s
+ecrets/kubernetes.io/serviceaccount"}],"livenessProbe":{"httpGet":{"path":"/healthz","port":10254,"scheme":"HTTP"},"initialDelaySeconds":10,"timeoutSeconds":1,"periodSeconds":10,"successThreshold":1,"failureThreshold":3},"readinessProbe":{"httpGet":{"path":"/he
+althz","port":10254,"scheme":"HTTP"},"initialDelaySeconds":10,"timeoutSeconds":1,"periodSeconds":10,"successThreshold":1,"failureThreshold":3},"terminationMessagePath":"/dev/termination-log","terminationMessagePolicy":"File","imagePullPolicy":"IfNotPresent","se
+curityContext":{"capabilities":{"add":["NET_BIND_SERVICE"],"drop":["ALL"]},"runAsUser":1001}}],"restartPolicy":"Always","terminationGracePeriodSeconds":60,"dnsPolicy":"ClusterFirst","serviceAccountName":"nginx-ingress-controller","serviceAccount":"nginx-ingress
+-controller","nodeName":"carbon","securityContext":{},"schedulerName":"default-scheduler","tolerations":[{"key":"node.kubernetes.io/not-ready","operator":"Exists","effect":"NoExecute","tolerationSeconds":300},{"key":"node.kubernetes.io/unreachable","operator":"
+Exists","effect":"NoExecute","tolerationSeconds":300}],"priority":0,"enableServiceLinks":true,"preemptionPolicy":"PreemptLowerPriority"},"status":{"phase":"Running","conditions":[{"type":"Initialized","status":"True","lastProbeTime":null,"lastTransitionTime":"2
+021-07-01T09: 57: 54Z"},{"type":"Ready","status":"True","lastProbeTime":null,"lastTransitionTime":"2021-07-11T13: 08: 19Z"},{"type":"ContainersReady","status":"True","lastProbeTime":null,"lastTransitionTime":"2021-07-11T13: 08: 19Z"},{"type":"PodScheduled","status":"
+True","lastProbeTime":null,"lastTransitionTime":"2021-07-01T09: 57: 54Z"}],"hostIP":"192.168.0.11","podIP":"10.1.208.123","podIPs":[{"ip":"10.1.208.123"}],"startTime":"2021-07-01T09: 57: 54Z","containerStatuses":[{"name":"nginx-ingress-controller-controller","state
+":{"running":{"startedAt":"2021-07-11T13: 08: 05Z"}},"lastState":{"terminated":{"exitCode":255,"reason":"Unknown","startedAt":"2021-07-11T13: 00: 27Z","finishedAt":"2021-07-11T13: 05: 05Z","containerID":"containerd: //c215d55cbe256987ec3224d60a0b95044e9b3f1e0fdb3c2dbd
+0127632d4c6b30"}},"ready":true,"restartCount":32,"image":"docker.io/bitnami/nginx-ingress-controller: 0.40.2-debian-10-r7","imageID":"docker.io/bitnami/nginx-ingress-controller@sha256:e27047e6866b49bb75ac041d81200318033a689691a40de497cde8ad4d8dd381","containerID
+":"containerd: //04316e8e22c1c846da9f5e84916e6103bda171df86c1d8c1c71896b0cceeb140","started":true}],"qosClass":"BestEffort"}}}

@@ -1,0 +1,70 @@
+{
+  "reconciler group": "",
+  "reconciler kind": "Pod",
+  "name": "notification-controller-6b4db845c8-cwtsj",
+  "namespace": "flux-system",
+  "pod": "flux-system/notification-controller-6b4db845c8-cwtsj",
+  "status": {
+    "phase": "Running",
+    "conditions": [
+      {
+        "type": "Initialized",
+        "status": "True",
+        "lastProbeTime": null,
+        "lastTransitionTime": "2021-06-30T13:09:12Z"
+      },
+      {
+        "type": "Ready",
+        "status": "True",
+        "lastProbeTime": null,
+        "lastTransitionTime": "2021-07-11T13:08:14Z"
+      },
+      {
+        "type": "ContainersReady",
+        "status": "True",
+        "lastProbeTime": null,
+        "lastTransitionTime": "2021-07-11T13:08:14Z"
+      },
+      {
+        "type": "PodScheduled",
+        "status": "True",
+        "lastProbeTime": null,
+        "lastTransitionTime": "2021-06-30T13:09:12Z"
+      }
+    ],
+    "hostIP": "192.168.0.11",
+    "podIP": "10.1.208.96",
+    "podIPs": [
+      {
+        "ip": "10.1.208.96"
+      }
+    ],
+    "startTime": "2021-06-30T13:09:12Z",
+    "containerStatuses": [
+      {
+        "name": "manager",
+        "state": {
+          "running": {
+            "startedAt": "2021-07-11T13:08:01Z"
+          }
+        },
+        "lastState": {
+          "terminated": {
+            "exitCode": 255,
+            "reason": "Unknown",
+            "startedAt": "2021-07-11T13:04:30Z",
+            "finishedAt": "2021-07-11T13:05:05Z",
+            "containerID": "containerd://84f8898bfb3c8056b4c0c4bae1124ca1796737e9220c40fdabcd7d154f56188e"
+          }
+        },
+        "ready": true,
+        "restartCount": 153,
+        "image": "ghcr.io/fluxcd/notification-controller:v0.11.0",
+        "imageID": "ghcr.io/fluxcd/notification-controller@sha256:0caaa306be20eb3ab51a18c8e78af485618ef101191a646d44d4e4834412de5c",
+        "containerID": "containerd://59e2e9b7bb6555c436aee653c78a2b102d7b30982587cad0fcffc9de21b82fbf",
+        "started": true
+      }
+    ],
+    "qosClass": "Burstable"
+  }
+}

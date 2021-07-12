@@ -1,0 +1,9 @@
+# https://github.com/marketplace/actions/container-image-scan
+general:
+  vulnerabilities:
+    - CVE-2021-3121
+    - CVE-2020-29652
+  bestPracticeViolations:
+    - DKL-LI-0001
+    - CIS-DI-0005
+    - CIS-DI-0006

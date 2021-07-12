@@ -1,0 +1,23 @@
+linters:
+  enable:
+    - gocritic
+    - goimports
+    - gosec
+    - nakedret
+    - prealloc
+
+linters-settings:
+  errcheck:
+    # exclude: "errcheck-excludes.txt"
+    check-type-assertions: true
+    check-blank: true
+
+  gocritic:
+    enabled-checks:
+      - builtinShadow
+      - emptyStringTest
+      - importShadow
+      - paramTypeCombine
+
+  nakedret:
+    max-func-lines: 0

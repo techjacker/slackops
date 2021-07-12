@@ -1,0 +1,70 @@
+---
+name: build
+on:
+  push:
+    branches:
+      - "master"
+    paths-ignore:
+      - "**.md"
+
+env:
+  DOCKERHUB_ID: techjacker
+  DOCKERHUB_REPO: slackops
+  # TODO: get version from git tag and add tag conditional to build and also tag git SHA
+  VERSION: 0.0.2
+
+jobs:
+  lint-test:
+    name: Lint and Test
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        go-version: [1.16.x]
+        python-version: [3.x]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        with:
+          path: ~/.cache/pre-commit
+          key: v1-pre-commit-hooks-${{ hashFiles('.pre-commit-config.yaml') }}
+          restore-keys: v1-pre-commit-hooks-
+      - uses: actions/cache@v2
+        with:
+          path: ~/go/pkg/mod
+          key: ${{ matrix.os }}-go-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ matrix.os }}-go-
+      - name: Setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+          architecture: x64
+      - name: Setup go
+        uses: actions/setup-go@v2
+        with:
+          go-version: ${{ matrix.go-version }}
+      - name: Install pre-commit
+        run: |
+          pip install --cache-dir ~/python_packages pre-commit
+      - name: golangci-lint
+        uses: golangci/golangci-lint-action@v2
+        with:
+          version: v1.40.1
+      - name: Lint
+        run: |
+          make deps-lint-ci
+          pre-commit run --all-files --verbose
+      - name: Login to Docker Hub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ env.DOCKERHUB_ID }}
+          password: ${{ secrets.DOCKERHUB_PWD }}
+      - name: Build docker image
+        run: make docker-build
+        # https://github.com/marketplace/actions/container-image-scan
+      - uses: azure/container-scan@v0
+        with:
+          image-name: ${{ env.DOCKERHUB_ID }}/${{ env.DOCKERHUB_REPO }}:${{ env.VERSION }}
+      - name: Push docker image
+        run: make docker-push
