@@ -2,10 +2,6 @@
 # Slackops
 K8 operator that ensures slack mirrors the state of the world in a given kubernetes cluster. Who needs gitops when you can have slackops?
 
-### Bonus
-- [x] Container security scan (see [build](.github/workflows/build.yml))
-- [x] Does not run as root (see [deployment](config/manager/manager.yaml))
---------------------------------
 ## Quickstart
 ### Deploy
 
@@ -70,6 +66,12 @@ $ curl -XPOST -H "Authorization: Bearer $SLACK_BOT_TOKEN" -H "Content-type: appl
 ```
 
 ---------------------------------------------------------
+
+### Security
+- [x] Container security scan (see [build](.github/workflows/build.yml))
+- [x] Does not run as root (see [deployment](config/manager/manager.yaml))
+
+---------------------------------------------------------
 ## Local Development
 ### Install dependencies
 ```
@@ -122,3 +124,5 @@ kubectl logs -c manager slackops-controller-manager-56895df697-9tz67
 ### Delete Operator
 make undeploy
 ```
+
+--------------------------------
